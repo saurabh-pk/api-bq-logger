@@ -1,0 +1,29 @@
+{
+  "name": "api-bq-logger",
+  "version": "1.0.0",
+  "description": "Package used for logging each and every api request, response and error in BigQuery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurabh-pk/api-bq-logger.git"
+  },
+  "keywords": [
+    "api-log",
+    "log-api",
+    "nodejs",
+    "bigquery",
+    "api-bigquery-logger"
+  ],
+  "author": "Saurabh Kshirsagar <saurabhkshi@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saurabh-pk/api-bq-logger/issues"
+  },
+  "homepage": "https://github.com/saurabh-pk/api-bq-logger#readme",
+  "dependencies": {
+    "@google-cloud/bigquery": "^1.3.0"
+  }
+}
