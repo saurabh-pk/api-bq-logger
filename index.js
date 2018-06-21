@@ -73,7 +73,7 @@
         });
     }
 
-    function loggeride(app, keyFilename, datasetName, table, showlogs) {
+    function startBQLogging(app, keyFilename, datasetName, table, showlogs) {
         SHOWLOG = (showlogs == null || showlogs == "")?false:true;
         var fs = require('fs');
         fs.access('./server/' + keyFilename, fs.constants.R_OK, (err) => {
