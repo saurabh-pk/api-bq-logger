@@ -29,8 +29,14 @@
                 });
     }
 
+    function req_id(ip_from){
+        var ts = new Date().getTime();
+         return ip_from.split('.').map( v =>{return v*ts;}).join('');
+    }
+
     function remoteActions(app) {
         app.remotes().before('**', (ctx, next) => {
+            ctx.req['request_id'] = req_id(ctx.req.ip);
             var json = {
                 api_url: ctx.req.baseUrl,
                 hostname: ctx.req.hostname,
@@ -38,6 +44,13 @@
                 request_method: ctx.req.method,
                 request_url: ctx.req.originalUrl,
                 request_id: ctx.req.request_id,
+                user_agent:ctx.req.headers['user-agent'],
+                referer:ctx.req.headers.referer,
+                params:JSON.stringify(ctx.req.params),
+                query:JSON.stringify(ctx.req.query),
+                body:JSON.stringify(ctx.req.body),
+                accessToken:ctx.req.accessToken,
+                args:JSON.stringify(ctx.args),
                 action_type: "request",
                 action_info: ""
             };
@@ -52,6 +65,13 @@
                 request_method: ctx.req.method,
                 request_url: ctx.req.originalUrl,
                 request_id: ctx.req.request_id,
+                user_agent:ctx.req.headers['user-agent'],
+                referer:ctx.req.headers.referer,
+                params:JSON.stringify(ctx.req.params),
+                query:JSON.stringify(ctx.req.query),
+                body:JSON.stringify(ctx.req.body),
+                accessToken:ctx.req.accessToken,
+                args:JSON.stringify(ctx.args),
                 action_type: "response",
                 action_info: ""
             };
@@ -66,6 +86,13 @@
                 request_method: ctx.req.method,
                 request_url: ctx.req.originalUrl,
                 request_id: ctx.req.request_id,
+                user_agent:ctx.req.headers['user-agent'],
+                referer:ctx.req.headers.referer,
+                params:JSON.stringify(ctx.req.params),
+                query:JSON.stringify(ctx.req.query),
+                body:JSON.stringify(ctx.req.body),
+                accessToken:ctx.req.accessToken,
+                args:JSON.stringify(ctx.args),
                 action_type: "error",
                 action_info: ctx.error
             };

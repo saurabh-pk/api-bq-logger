@@ -18,7 +18,7 @@
     "api-bigquery-logger"
   ],
   "author": "Saurabh Kshirsagar <saurabhkshi@gmail.com>",
-  "license": "ISC",
+  "license": "GNU GPL-3.0",
   "bugs": {
     "url": "https://github.com/saurabh-pk/api-bq-logger/issues"
   },
