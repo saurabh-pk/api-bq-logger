@@ -42,6 +42,7 @@ Create a Table in dataset
 
             OR 
     you can add schema manually using following schema details.
+    
         _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
        |                                |               |               |
        |    Column Name                 |   Type        |   Mode        |
@@ -49,20 +50,20 @@ Create a Table in dataset
        |    request_id                  |   STRING      |   NULLABLE    |
        |    requested_api_url           |   STRING      |   NULLABLE    |
        |    requesting_hostname         |   STRING      |   NULLABLE    |
-       |    requesting_ip		|   STRING      |   NULLABLE    |
-       |    request_method		|   STRING      |   NULLABLE    |
+       |    requesting_ip		 |   STRING      |   NULLABLE    |
+       |    request_method		 |   STRING      |   NULLABLE    |
        |    request_url                 |   STRING      |   NULLABLE    |
-       |    request_from_user_agent	|   STRING      |   NULLABLE    |
+       |    request_from_user_agent	 |   STRING      |   NULLABLE    |
        |    request_referer             |   STRING      |   NULLABLE    |
-       |    request_params		|   STRING      |   NULLABLE    |
-       |    request_query		|   STRING      |   NULLABLE    |
-       |    request_body		|   STRING      |   NULLABLE    |
+       |    request_params		 |   STRING      |   NULLABLE    |
+       |    request_query		 |   STRING      |   NULLABLE    |
+       |    request_body		 |   STRING      |   NULLABLE    |
        |    request_accessToken         |   STRING      |   NULLABLE    |
-       |    request_args		|   STRING      |   NULLABLE    |
-       |    request_headers		|   STRING      |   NULLABLE    |
-       |    processing_time		|   STRING      |   NULLABLE    |
+       |    request_args		 |   STRING      |   NULLABLE    |
+       |    request_headers		 |   STRING      |   NULLABLE    |
+       |    processing_time		 |   STRING      |   NULLABLE    |
        |    action_type                 |   STRING      |   NULLABLE    |
-       |    action_details		|   STRING      |   NULLABLE    |
+       |    action_details		 |   STRING      |   NULLABLE    |
        |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ | _ _ _ _ _ _ _ |
 
 5) Click the Create Table button.
