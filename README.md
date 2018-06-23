@@ -42,8 +42,8 @@ Create a Table in dataset
 
             OR 
     you can add schema manually using following schema details.
-        
-	_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+    
+        _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
        |                                |               |               |
        |    Column Name                 |   Type        |   Mode        |
        |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ | _ _ _ _ _ _ _ |
