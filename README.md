@@ -28,7 +28,7 @@ $ npm install api-bq-logger
 
 #### Manual download
 
-You can manually download perfect-scrollbar
+You can manually download api-bq-logger
 from [Releases](https://github.com/saurabh-pk/api-bq-logger/releases).
 
 #### From sources
