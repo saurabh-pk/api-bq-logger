@@ -53,8 +53,12 @@ $ npm install
 1.  BigQuery is automatically enabled in new projects.To activate BigQuery in a pre-existing project, go to Enable the BigQuery API.
     [Enable the API][enable_api]
 
-1.  [Set up authentication with a service account][auth] so you can access the
-    API from your local workstation.
+1. To get authentication key file with a service account so you can access the API.
+    1. Go to the **Create service account key** page in the [GCP Console](https://console.cloud.google.com/apis/credentials/serviceaccountkey).
+     1.  From the  **Service account**  drop-down list, select  **New service account**.
+     2.  Enter a name into the  **Service account name**  field.
+     3. From the **Role** drop-down list, select **Project** > **Owner**.
+     4.  Click  **Create**. A JSON file that contains your key downloads to your computer. Save this file in your projects base_dir.
 
 [projects]:https://console.cloud.google.com/cloud-resource-manager
 [billing]: https://cloud.google.com/billing/docs/how-to/modify-project
