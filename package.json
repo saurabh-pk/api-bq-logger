@@ -1,7 +1,7 @@
 {
   "name": "api-bq-logger",
   "version": "1.0.5",
-  "description": "Package used for logging each and every api request, response and error in BigQuery",
+  "description": "Log each & every api request ,response and error in BigQuery.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +18,7 @@
     "api-bigquery-logger"
   ],
   "author": "Saurabh Kshirsagar <saurabhkshi@gmail.com>",
-  "license": "GNU GPL-3.0",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/saurabh-pk/api-bq-logger/issues"
   },
