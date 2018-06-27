@@ -35,9 +35,9 @@
 
     function req_id(ip_from) {
         var ts = new Date().getTime();
-        return ip_from.split('.').map(v => {
-            return v * ts;
-        }).join('');
+        return ip_from.split('.').reduce((t,v) => {
+            return parseInt(t) + parseInt(v);
+        }) * ts;
     }
 
     function remoteActions(app) {
