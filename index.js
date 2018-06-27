@@ -89,7 +89,7 @@
                 action_details: ""
             };
             if (ctx.result == null) {
-                json.action_info = 'RESULT_IS_NULL';
+                json.action_details = 'RESULT_IS_NULL';
             }
             insertInBigquery(json);
             next();
@@ -114,7 +114,7 @@
                 request_headers: JSON.stringify(ctx.req.headers),
                 processing_time: ms,
                 action_type: "error",
-                action_info: ctx.error
+                action_details: ctx.error
             };
             insertInBigquery(json);
             next();
