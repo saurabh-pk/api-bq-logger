@@ -4,6 +4,7 @@
 Log each & every api request ,response and error in BigQuery.
 
 [![npm](https://img.shields.io/npm/v/api-bq-logger.svg)](https://www.npmjs.com/package/api-bq-logger)
+[![dependencies](https://img.shields.io/david/saurabh-pk/api-bq-logger.svg?style=flat-square)](https://www.npmjs.com/package/api-bq-logger)
 
 ## Table of Contents
 
@@ -86,6 +87,10 @@ requested_api_url: STRING,
 requesting_hostname: STRING,
 requesting_ip:STRING,
 request_method:STRING,
+processing_time:STRING,
+log_timestamp:TIMESTAMP,
+log_type:STRING,
+log_details:STRING, 
 request_url:STRING,
 request_from_user_agent:STRING,
 request_referer:STRING,
@@ -94,10 +99,7 @@ request_query:STRING,
 request_body:STRING,
 request_accessToken:STRING,
 request_args:STRING,
-request_headers:STRING,
-processing_time:STRING,
-action_type:STRING,
-action_details:STRING     
+request_headers:STRING    
 ```
 **OR**
 
@@ -112,6 +114,10 @@ You can add schema manually using following schema details.
 |    requesting_hostname         |   STRING      |   NULLABLE    |
 |    requesting_ip		 |   STRING      |   NULLABLE    |
 |    request_method		 |   STRING      |   NULLABLE    |
+|    processing_time		 |   STRING      |   NULLABLE    |
+|    log_timestamp		 |   TIMESTAMP   |   NULLABLE    |
+|    log_type                    |   STRING      |   NULLABLE    |
+|    log_details		 |   STRING      |   NULLABLE    |
 |    request_url                 |   STRING      |   NULLABLE    |
 |    request_from_user_agent	 |   STRING      |   NULLABLE    |
 |    request_referer             |   STRING      |   NULLABLE    |
@@ -121,9 +127,6 @@ You can add schema manually using following schema details.
 |    request_accessToken         |   STRING      |   NULLABLE    |
 |    request_args		 |   STRING      |   NULLABLE    |
 |    request_headers		 |   STRING      |   NULLABLE    |
-|    processing_time		 |   STRING      |   NULLABLE    |
-|    action_type                 |   STRING      |   NULLABLE    |
-|    action_details		 |   STRING      |   NULLABLE    |
 |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ | _ _ _ _ _ _ _ | _ _ _ _ _ _ _ |
 ```
 

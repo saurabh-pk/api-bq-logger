@@ -1,6 +1,6 @@
 {
   "name": "api-bq-logger",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Log each & every api request ,response and error in BigQuery.",
   "main": "index.js",
   "scripts": {

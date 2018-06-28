@@ -35,7 +35,7 @@
 
     function req_id(ip_from) {
         var ts = new Date().getTime();
-        return ip_from.split('.').reduce((t,v) => {
+        return ip_from.split('.').reduce((t, v) => {
             return parseInt(t) + parseInt(v);
         }) * ts;
     }
@@ -50,6 +50,10 @@
                 requesting_hostname: ctx.req.hostname,
                 requesting_ip: ctx.req.ip,
                 request_method: ctx.req.method,
+                processing_time: 0,
+                log_timestamp: new Date().toISOString(),
+                log_type: "request",
+                log_details: "",
                 request_url: ctx.req.originalUrl,
                 request_from_user_agent: ctx.req.headers['user-agent'],
                 request_referer: ctx.req.headers.referer,
@@ -58,10 +62,7 @@
                 request_body: JSON.stringify(ctx.req.body),
                 request_accessToken: ctx.req.accessToken,
                 request_args: JSON.stringify(ctx.args),
-                request_headers: JSON.stringify(ctx.req.headers),
-                processing_time: 0,
-                action_type: "request",
-                action_details: ""
+                request_headers: JSON.stringify(ctx.req.headers)
             };
             insertInBigquery(json);
             next();
@@ -75,6 +76,10 @@
                 requesting_hostname: ctx.req.hostname,
                 requesting_ip: ctx.req.ip,
                 request_method: ctx.req.method,
+                processing_time: ms,
+                log_timestamp: new Date().toISOString(),
+                log_type: "response",
+                log_details: "",
                 request_url: ctx.req.originalUrl,
                 request_from_user_agent: ctx.req.headers['user-agent'],
                 request_referer: ctx.req.headers.referer,
@@ -83,10 +88,7 @@
                 request_body: JSON.stringify(ctx.req.body),
                 request_accessToken: ctx.req.accessToken,
                 request_args: JSON.stringify(ctx.args),
-                request_headers: JSON.stringify(ctx.req.headers),
-                processing_time: ms,
-                action_type: "response",
-                action_details: ""
+                request_headers: JSON.stringify(ctx.req.headers)
             };
             if (ctx.result == null) {
                 json.action_details = 'RESULT_IS_NULL';
@@ -103,6 +105,10 @@
                 requesting_hostname: ctx.req.hostname,
                 requesting_ip: ctx.req.ip,
                 request_method: ctx.req.method,
+                processing_time: ms,
+                log_timestamp: new Date().toISOString(),
+                log_type: "error",
+                log_details: ctx.error,
                 request_url: ctx.req.originalUrl,
                 request_from_user_agent: ctx.req.headers['user-agent'],
                 request_referer: ctx.req.headers.referer,
@@ -111,10 +117,7 @@
                 request_body: JSON.stringify(ctx.req.body),
                 request_accessToken: ctx.req.accessToken,
                 request_args: JSON.stringify(ctx.args),
-                request_headers: JSON.stringify(ctx.req.headers),
-                processing_time: ms,
-                action_type: "error",
-                action_details: ctx.error
+                request_headers: JSON.stringify(ctx.req.headers)
             };
             insertInBigquery(json);
             next();
