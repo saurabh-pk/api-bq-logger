@@ -25,6 +25,7 @@
   "homepage": "https://github.com/saurabh-pk/api-bq-logger#readme",
   "dependencies": {
     "@google-cloud/bigquery": "^1.3.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "util": "^0.11.1"
   }
 }

@@ -7,6 +7,7 @@
     var BQtable = "";
     var SHOWLOG = false;
     var bigquery;
+    var Util = require('util');
     function isNull(val) {
         return (val ? !(val != null && val != "") : true);
     }
@@ -57,12 +58,12 @@
                 request_url: ctx.req.originalUrl,
                 request_from_user_agent: ctx.req.headers['user-agent'],
                 request_referer: ctx.req.headers.referer,
-                request_params: JSON.stringify(ctx.req.params),
-                request_query: JSON.stringify(ctx.req.query),
-                request_body: JSON.stringify(ctx.req.body),
+                request_params: Util.format(ctx.req.params),
+                request_query: Util.format(ctx.req.query),
+                request_body: Util.format(ctx.req.body),
                 request_accessToken: ctx.req.accessToken,
-                request_args: JSON.stringify(ctx.args),
-                request_headers: JSON.stringify(ctx.req.headers)
+                request_args: Util.format(ctx.args),
+                request_headers: Util.format(ctx.req.headers)
             };
             insertInBigquery(json);
             next();
@@ -83,12 +84,12 @@
                 request_url: ctx.req.originalUrl,
                 request_from_user_agent: ctx.req.headers['user-agent'],
                 request_referer: ctx.req.headers.referer,
-                request_params: JSON.stringify(ctx.req.params),
-                request_query: JSON.stringify(ctx.req.query),
-                request_body: JSON.stringify(ctx.req.body),
+                request_params: Util.format(ctx.req.params),
+                request_query: Util.format(ctx.req.query),
+                request_body: Util.format(ctx.req.body),
                 request_accessToken: ctx.req.accessToken,
-                request_args: JSON.stringify(ctx.args),
-                request_headers: JSON.stringify(ctx.req.headers)
+                request_args: Util.format(ctx.args),
+                request_headers: Util.format(ctx.req.headers)
             };
             if (ctx.result == null) {
                 json.action_details = 'RESULT_IS_NULL';
@@ -112,12 +113,12 @@
                 request_url: ctx.req.originalUrl,
                 request_from_user_agent: ctx.req.headers['user-agent'],
                 request_referer: ctx.req.headers.referer,
-                request_params: JSON.stringify(ctx.req.params),
-                request_query: JSON.stringify(ctx.req.query),
-                request_body: JSON.stringify(ctx.req.body),
+                request_params: Util.format(ctx.req.params),
+                request_query: Util.format(ctx.req.query),
+                request_body: Util.format(ctx.req.body),
                 request_accessToken: ctx.req.accessToken,
-                request_args: JSON.stringify(ctx.args),
-                request_headers: JSON.stringify(ctx.req.headers)
+                request_args: Util.format(ctx.args),
+                request_headers: Util.format(ctx.req.headers)
             };
             insertInBigquery(json);
             next();
