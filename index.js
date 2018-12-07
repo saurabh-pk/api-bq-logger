@@ -58,12 +58,12 @@
                 request_url: ctx.req.originalUrl,
                 request_from_user_agent: ctx.req.headers['user-agent'],
                 request_referer: ctx.req.headers.referer,
-                request_params: Util.format(ctx.req.params),
-                request_query: Util.format(ctx.req.query),
-                request_body: Util.format(ctx.req.body),
+                request_params: Util.inspect(ctx.req.params),
+                request_query: Util.inspect(ctx.req.query),
+                request_body: Util.inspect(ctx.req.body),
                 request_accessToken: ctx.req.accessToken,
-                request_args: Util.format(ctx.args),
-                request_headers: Util.format(ctx.req.headers)
+                request_args: Util.inspect(ctx.args),
+                request_headers: Util.inspect(ctx.req.headers)
             };
             insertInBigquery(json);
             next();
@@ -84,12 +84,12 @@
                 request_url: ctx.req.originalUrl,
                 request_from_user_agent: ctx.req.headers['user-agent'],
                 request_referer: ctx.req.headers.referer,
-                request_params: Util.format(ctx.req.params),
-                request_query: Util.format(ctx.req.query),
-                request_body: Util.format(ctx.req.body),
+                request_params: Util.inspect(ctx.req.params),
+                request_query: Util.inspect(ctx.req.query),
+                request_body: Util.inspect(ctx.req.body),
                 request_accessToken: ctx.req.accessToken,
-                request_args: Util.format(ctx.args),
-                request_headers: Util.format(ctx.req.headers)
+                request_args: Util.inspect(ctx.args),
+                request_headers: Util.inspect(ctx.req.headers)
             };
             if (ctx.result == null) {
                 json.action_details = 'RESULT_IS_NULL';
@@ -113,12 +113,12 @@
                 request_url: ctx.req.originalUrl,
                 request_from_user_agent: ctx.req.headers['user-agent'],
                 request_referer: ctx.req.headers.referer,
-                request_params: Util.format(ctx.req.params),
-                request_query: Util.format(ctx.req.query),
-                request_body: Util.format(ctx.req.body),
+                request_params: Util.inspect(ctx.req.params),
+                request_query: Util.inspect(ctx.req.query),
+                request_body: Util.inspect(ctx.req.body),
                 request_accessToken: ctx.req.accessToken,
-                request_args: Util.format(ctx.args),
-                request_headers: Util.format(ctx.req.headers)
+                request_args: Util.inspect(ctx.args),
+                request_headers: Util.inspect(ctx.req.headers)
             };
             insertInBigquery(json);
             next();
