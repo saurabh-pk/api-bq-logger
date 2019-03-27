@@ -36,6 +36,7 @@
 
     function req_id(ip_from) {
         var ts = new Date().getTime();
+        ip_from = ip_from.match(/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/)[0];   
         return ip_from.split('.').reduce((t, v) => {
             return parseInt(t) + parseInt(v);
         }) * ts;
