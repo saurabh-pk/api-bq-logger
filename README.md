@@ -4,7 +4,6 @@
 Log each & every api request ,response and error in BigQuery.
 
 [![npm](https://img.shields.io/npm/v/api-bq-logger.svg)](https://www.npmjs.com/package/api-bq-logger)
-[![dependencies](https://img.shields.io/david/saurabh-pk/api-bq-logger.svg?style=flat-square)](https://www.npmjs.com/package/api-bq-logger)
 
 ## Table of Contents
 
