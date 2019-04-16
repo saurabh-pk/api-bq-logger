@@ -36,7 +36,7 @@
 
     function req_id(ip_from) {
         var ts = new Date().getTime();
-        ip_from = ip_from.match(/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/)[0];   
+        ip_from = ip_from.match(/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/)[0];
         return ip_from.split('.').reduce((t, v) => {
             return parseInt(t) + parseInt(v);
         }) * ts;
@@ -126,8 +126,9 @@
         });
     }
 
-    function loggeride(app, keyFilename, datasetName, tableName, showlogs) {
-        SHOWLOG = (showlogs == null || showlogs == "") ? false : true;
+    function loggeride(app, keyFilename, datasetName, tableName, showLogs, onErrorProcessExit) {
+        SHOWLOG = (showLogs == null || showLogs == "") ? false : true;
+        let isProcessExit = (typeof onErrorProcessExit == 'boolean') ? onErrorProcessExit : false;
         var fs = require('fs');
         fs.access(path.resolve(keyFilename), fs.constants.R_OK, (err) => {
             if (!err) {
@@ -145,29 +146,41 @@
                                             remoteActions(app);
                                         } else {
                                             console.error("Tabale not found in given dataset :", tableName);
-                                            process.exit();
+                                            if (isProcessExit) {
+                                                process.exit();
+                                            }
                                         }
                                     } else {
                                         console.error("Bigquery error in table check :", JSON.stringify(tblerr));
-                                        process.exit();
+                                        if (isProcessExit) {
+                                            process.exit();
+                                        }
                                     }
                                 });
                             } else {
                                 console.error("Dataset not found :", datasetName);
-                                process.exit();
+                                if (isProcessExit) {
+                                    process.exit();
+                                }
                             }
                         } else {
                             console.error("Bigquery error in dataset check :", JSON.stringify(dserr));
-                            process.exit();
+                            if (isProcessExit) {
+                                process.exit();
+                            }
                         }
                     });
                 } else {
                     console.error("Invalid Dataset name or Table name.");
-                    process.exit();
+                    if (isProcessExit) {
+                        process.exit();
+                    }
                 }
             } else {
                 console.error("Key file is not accessible :", path.resolve(keyFilename));
-                process.exit();
+                if (isProcessExit) {
+                    process.exit();
+                }
             }
         });
     }

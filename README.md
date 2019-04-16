@@ -139,14 +139,15 @@ For more details visit,
 1. Add following code in server/server.js after boot script.
 
 ```    
-var apiBQLogger = require("api-bq- logger").factory(app,'KeyFileName','DatasetName','TableName',showlog);
+var apiBQLogger = require("api-bq- logger").factory(app,'KeyFileName','DatasetName','TableName',showLog,onErrorProcessExit);
 ```
 where,
 * **app** is an object of loopback
 * **KeyFileName** name of the Google Cloud Bigquery service key file saved in base directory.
  * **DatasetName** Name of the dataset used to create logs table.
  * **TableName** Name of the table name which is use to save logs.
- * **showlog** Shows logs in console if set **true**, default is **false**
+ * **showLog** Shows logs in console if set **true**, default is **false**
+* **onErrorProcessExit** throws error and breaks the execution if set **true**, default is **false**
 
 ## Helpdesk
 
